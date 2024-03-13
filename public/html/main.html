@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get name your pet!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        padding: 30px 40px;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+        height: 100vh;
+        background-color: #deecfc;
+      }
+      h1 {
+        color: #357292;
+      }
+      h3 {
+        font-size: 32px;
+        color: #357292;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0 auto;
+        width: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+      }
+
+      li {
+        color: #357292;
+        font-size: 24px;
+        list-style-type: none;
+      }
+
+      .container {
+        display: flex;
+        z-index: 10;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        min-height: 500px;
+        border-radius: 20px;
+        border: 1px solid whitesmoke;
+        padding: 50px 60px;
+        background-color: white;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .container-alone {
+        transform: translateX(50%);
+      }
+
+      .container-response {
+        transform: translateX(-662px);
+        opacity: 0;
+        z-index: 1;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        position: relative;
+      }
+
+      .container-response-open {
+        transition: all 0.5s;
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .container-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .form {
+        display: flex;
+        width: 100%;
+      }
+
+      .descr {
+        margin: 0px 0px 30px 0px;
+        color: #347292;
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      video {
+        padding: 10px;
+        width: 100%;
+      }
+
+      input {
+        padding: 7px 7px 7px 15px;
+        width: 100%;
+        border: 1px solid #347292;
+        border-radius: 10px;
+        color: #357292;
+        margin-right: 20px;
+      }
+      input::placeholder {
+        color: #35729299;
+      }
+
+      button {
+        width: 200px;
+        border: none;
+        border-radius: 7px;
+        background: #c8ddea;
+        color: #347292;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #27576f;
+        transition: all 0.2s ease-in;
+        color: white;
+      }
+
+      .loading {
+        width: 100%;
+        max-width: 340px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container-main container-alone">
+      <div class="title"><h1>Дай имя своему питомцу</h1></div>
+      <div class="container-body">
+        <video src="/public/video/pet-owners-talking-to-each-other-3574757-2992202.mp4" type="video/mp4" muted="muted" autoplay loop></video>
+        <div class="descr">Опишите своего питомца: вид, размер, цвет, привычки</div>
+        <form class="form">
+          <label for="main"></label>
+          <input id="main" value="" type="text" name="animal" placeholder="Описание" />
+
+          <button type="submit">Сгенерировать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container container-response">
+      <div class="title response-title">
+        <h1>Подходящие имена:</h1>
+      </div>
+      <div class="container-body response"></div>
+    </div>
+    <script src="/public/js/app.js"></script>
+  </body>
+</html>

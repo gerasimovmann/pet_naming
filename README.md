@@ -1,23 +1,24 @@
 <!-- prettier-ignore-start -->
 
-# Learning project TODO App
+# Project Pets naming
 
 [![en](https://img.shields.io/badge/lang-en-blue)](/README.md)
 [![ru](https://img.shields.io/badge/lang-ru-green.svg)](/README.ru.md)
 
-This training project was designed to practice React knowledge.
+This project was written to try out the ChatGPT API
 
 Visualization:
 
-<img src="git_source/git-gif_1.gif" width="600" height="auto"/>
+<img src="git_source/pet_name.gif" width="600" height="auto"/>
 
 ## Description
 
-My first training project using the React library. Basic TODO App.
+This application accesses the ChatGPT API and generates a name based on the description of the animal
 
 ## Usage
 
 Dependencies must be installed in the root folder of the project:
+:
 
 ```bash
 npm install
@@ -26,17 +27,7 @@ npm install
 Run the application locally in the root folder of the project:
 
 ```bash
-npm start
+node server.mjs
 ```
-
-## App can do
-
-#### Displaying the task list
-
-#### Adding to the task list
-
-#### Adding a progress note
-
-#### Deleting completed tasks
 
 <!-- prettier-ignore-end -->
